@@ -13,6 +13,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -28,8 +29,9 @@ public class AuthInterceptor implements HandlerInterceptor
         Map<String, Object> map = jwtService.parseToken(token);
 
         String username = map.get("username").toString();
+        List<String> list = (List<String>) map.get("authorities");
+        String[] auth = list.toArray(new String[0]);
 
-        String[] auth = new String[0];
         UserDetails userDetails = User.builder()
                 .username(username)
                 .password("")

@@ -8,30 +8,41 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("users")
-public class User implements Serializable
+@TableName("articles")
+public class Article
 {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @TableField(value = "username")
-    private String username;
+    @TableField("title")
+    private String title;
 
-    @TableField(value = "password")
-    private String password;
+    @TableField("summary")
+    private String summary;
 
-    @TableField(value = "nickname")
-    private String nickname;
+    @TableField("content")
+    private String content;
 
-    @TableField(value = "email")
-    private String email;
+    @TableField("thumbnail")
+    private String thumbnail;
 
-    @TableField(value = "created_at")
+    @TableField("category_id")
+    private Integer categoryId;
+
+    @TableField("user_id")
+    private Integer userId;
+
+    @TableField("status")
+    private Integer status;
+
+    @TableField("created_at")
     private LocalDateTime createdAt;
+
+    @TableField("updated_at")
+    private LocalDateTime updatedAt;
 }

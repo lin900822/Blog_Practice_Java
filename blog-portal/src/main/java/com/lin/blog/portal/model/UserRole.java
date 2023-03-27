@@ -9,29 +9,19 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("users")
-public class User implements Serializable
+@TableName("user_roles")
+public class UserRole implements Serializable
 {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @TableField(value = "username")
-    private String username;
+    @TableField("user_id")
+    private Integer userId;
 
-    @TableField(value = "password")
-    private String password;
-
-    @TableField(value = "nickname")
-    private String nickname;
-
-    @TableField(value = "email")
-    private String email;
-
-    @TableField(value = "created_at")
-    private LocalDateTime createdAt;
+    @TableField("role_id")
+    private Integer roleId;
 }

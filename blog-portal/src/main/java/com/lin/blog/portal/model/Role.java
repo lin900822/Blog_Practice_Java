@@ -14,24 +14,15 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("users")
-public class User implements Serializable
+@TableName("roles")
+public class Role implements Serializable
 {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @TableField(value = "username")
-    private String username;
+    @TableField("name")
+    private String name;
 
-    @TableField(value = "password")
-    private String password;
-
-    @TableField(value = "nickname")
-    private String nickname;
-
-    @TableField(value = "email")
-    private String email;
-
-    @TableField(value = "created_at")
+    @TableField("created_at")
     private LocalDateTime createdAt;
 }
