@@ -5,28 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8088a895-e0ef-4e22-9e4b-d3fca3edee61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ArticleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/ArticleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/UserRoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/IArticleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/vo/ArticleVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/vo/RegisterVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/SystemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ExceptionControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ExceptionControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/interceptor/AuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/interceptor/AuthInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/security/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/security/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/JWTService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/SpringUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/UserDetailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/vo/ArticleVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/vo/ArticleVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +159,7 @@
       <workItem from="1679711804318" duration="15656000" />
       <workItem from="1679798215975" duration="7676000" />
       <workItem from="1679887111453" duration="16563000" />
+      <workItem from="1679980865129" duration="9971000" />
     </task>
     <servers />
   </component>

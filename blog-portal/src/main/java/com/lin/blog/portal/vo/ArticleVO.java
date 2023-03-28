@@ -19,7 +19,11 @@ public class ArticleVO implements Serializable
 
     private String thumbnail;
 
-    private Integer categoryId;
+    private String category;
 
     private Integer status;
+
+    private String createdAt;
+
+    private String updatedAt;
 }

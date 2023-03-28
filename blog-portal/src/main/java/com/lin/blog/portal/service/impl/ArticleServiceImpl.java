@@ -34,7 +34,7 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
                 .setSummary(articleVO.getSummary())
                 .setContent(articleVO.getContent())
                 .setThumbnail(articleVO.getThumbnail())
-                .setCategoryId(articleVO.getCategoryId())
+                .setCategoryId(0)
                 .setUserId(0)
                 .setStatus(articleVO.getStatus())
                 .setCreatedAt(LocalDateTime.now())
