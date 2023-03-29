@@ -51,6 +51,7 @@ public class AuthController
     public UserVO getUser(@AuthenticationPrincipal UserDetails userDetails)
     {
         if (userDetails == null) return null;
+        log.debug("取得使用者名稱, Username:{}", userDetails.getUsername());
 
         User user = userService.getUserByUsername(userDetails.getUsername());
 

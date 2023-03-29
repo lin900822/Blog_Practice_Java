@@ -10,7 +10,9 @@ import java.io.Serializable;
 @Accessors(chain = true)
 public class ArticleVO implements Serializable
 {
-    @NotBlank
+    private Integer id;
+
+    @NotBlank(message = "文章標題不得為空")
     private String title;
 
     private String summary;

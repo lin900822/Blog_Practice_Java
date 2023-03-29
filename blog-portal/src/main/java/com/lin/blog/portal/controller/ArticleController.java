@@ -6,10 +6,6 @@ import com.lin.blog.portal.service.IArticleService;
 import com.lin.blog.portal.vo.ArticleVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -25,28 +21,31 @@ public class ArticleController
     @Resource
     private IArticleService articleService;
 
-    @PostMapping("/create")
+    @PostMapping("/save")
     //@PreAuthorize("hasRole('ROLE_ADMIN')")
-    public ResponseEntity createArticle(@Validated ArticleVO articleVO,
+    public ResponseEntity<Integer> saveArticle(@Validated ArticleVO articleVO,
             /*@AuthenticationPrincipal UserDetails userDetails,*/
                                         BindingResult result)
     {
-        log.debug("新增文章:{}", articleVO);
+        log.debug("儲存文章:{}", articleVO);
         if (result.hasErrors())
         {
             String errorMessage = result.getFieldError().getDefaultMessage();
             throw new ServiceException(errorMessage);
         }
 
-        articleService.createArticle(articleVO, null);
+        Integer articleId = articleService.saveArticle(articleVO, null);
 
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(articleId);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ArticleVO> getArticleById(@PathVariable Integer id)
     {
+        log.debug("查詢文章,ID:{}", id);
         Article article = articleService.getById(id);
+
+        if(article == null) throw new ServiceException("找不到指定文章");
 
         ArticleVO articleVO = new ArticleVO()
                 .setTitle(article.getTitle())

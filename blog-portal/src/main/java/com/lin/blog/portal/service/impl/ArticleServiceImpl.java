@@ -25,11 +25,12 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
 
     @Override
     @Transactional
-    public void createArticle(ArticleVO articleVO, String username) throws ServiceException
+    public Integer saveArticle(ArticleVO articleVO, String username) throws ServiceException
     {
         //User user = userMapper.findUserByUsername(username);
 
         Article article = new Article()
+                .setId(articleVO.getId())
                 .setTitle(articleVO.getTitle())
                 .setSummary(articleVO.getSummary())
                 .setContent(articleVO.getContent())
@@ -37,10 +38,20 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
                 .setCategoryId(0)
                 .setUserId(0)
                 .setStatus(articleVO.getStatus())
-                .setCreatedAt(LocalDateTime.now())
                 .setUpdatedAt(LocalDateTime.now());
 
-        int num = articleMapper.insert(article);
+        int num = 0;
+
+        if(article.getId() == null){
+            article.setCreatedAt(LocalDateTime.now());
+            num = articleMapper.insert(article);
+        }
+        else{
+            num = articleMapper.updateById(article);
+        }
+
         if(num != 1) throw new ServiceException("資料庫錯誤!");
+
+        return article.getId();
     }
 }
