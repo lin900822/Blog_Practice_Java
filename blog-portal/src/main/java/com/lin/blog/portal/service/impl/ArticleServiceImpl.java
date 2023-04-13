@@ -1,6 +1,8 @@
 package com.lin.blog.portal.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.lin.blog.portal.exception.ServiceException;
 import com.lin.blog.portal.mapper.ArticleMapper;
 import com.lin.blog.portal.mapper.UserMapper;
@@ -13,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> implements IArticleService
@@ -53,5 +56,13 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         if(num != 1) throw new ServiceException("資料庫錯誤!");
 
         return article.getId();
+    }
+
+    @Override
+    public PageInfo<Article> getAllArticles(Integer pageNum, Integer pageSize)
+    {
+        PageHelper.startPage(pageNum, pageSize);
+        List<Article> articles = articleMapper.selectList(null);
+        return new PageInfo<>(articles);
     }
 }
