@@ -1,5 +1,6 @@
 package com.lin.blog.portal.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -61,8 +62,11 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     @Override
     public PageInfo<Article> getAllArticles(Integer pageNum, Integer pageSize)
     {
+        QueryWrapper<Article> query = new QueryWrapper<>();
+        query.orderByDesc("updated_at");
+
         PageHelper.startPage(pageNum, pageSize);
-        List<Article> articles = articleMapper.selectList(null);
+        List<Article> articles = articleMapper.selectList(query);
         return new PageInfo<>(articles);
     }
 }

@@ -60,4 +60,15 @@ public class ArticleController
 
         return ResponseEntity.ok(articles);
     }
+
+    @GetMapping("/delete/{id}")
+    public ResponseEntity deleteById(@PathVariable Integer id)
+    {
+        boolean hasRemoved = articleService.removeById(id);
+        if (!hasRemoved)
+        {
+            throw new ServiceException("文章不存在!");
+        }
+        return ResponseEntity.ok(null);
+    }
 }
