@@ -8,7 +8,6 @@ import com.lin.blog.portal.exception.ServiceException;
 import com.lin.blog.portal.mapper.ArticleMapper;
 import com.lin.blog.portal.mapper.UserMapper;
 import com.lin.blog.portal.model.Article;
-import com.lin.blog.portal.model.User;
 import com.lin.blog.portal.service.IArticleService;
 import com.lin.blog.portal.vo.ArticleVO;
 import org.springframework.stereotype.Service;
@@ -39,7 +38,7 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
                 .setSummary(articleVO.getSummary())
                 .setContent(articleVO.getContent())
                 .setThumbnail(articleVO.getThumbnail())
-                .setCategoryId(0)
+                .setCategory(articleVO.getCategory())
                 .setUserId(0)
                 .setStatus(articleVO.getStatus())
                 .setUpdatedAt(LocalDateTime.now());

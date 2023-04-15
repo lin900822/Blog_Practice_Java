@@ -31,8 +31,8 @@ public class Article
     @TableField("thumbnail")
     private String thumbnail;
 
-    @TableField("category_id")
-    private Integer categoryId;
+    @TableField("category")
+    private String category;
 
     @TableField("user_id")
     private Integer userId;
