@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8088a895-e0ef-4e22-9e4b-d3fca3edee61" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/CategoryPathMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/CategoryPath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/ICategoryPathService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/ICategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/CategoryPathServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/resources/mapper/CategoryPathMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/test/java/com/lin/blog/portal/PortalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/test/java/com/lin/blog/portal/PortalTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +61,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Lin\Java\Projects\Blog_Practice\blog-portal\src\main\resources" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.BlogPortalApplication">
-    <configuration name="PortalTest.encodePassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PortalTest.testCategoryPathMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="blog-portal" />
       <extension name="coverage">
         <pattern>
@@ -63,13 +77,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.lin.blog.portal" />
       <option name="MAIN_CLASS_NAME" value="com.lin.blog.portal.PortalTest" />
-      <option name="METHOD_NAME" value="encodePassword" />
+      <option name="METHOD_NAME" value="testCategoryPathMapper" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PortalTest.testGenerateJWT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PortalTest.testCategorySelectDescendantById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="blog-portal" />
       <extension name="coverage">
         <pattern>
@@ -79,13 +93,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.lin.blog.portal" />
       <option name="MAIN_CLASS_NAME" value="com.lin.blog.portal.PortalTest" />
-      <option name="METHOD_NAME" value="testGenerateJWT" />
+      <option name="METHOD_NAME" value="testCategorySelectDescendantById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PortalTest.testParseJWT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PortalTest.testCategoryServiceImpl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="blog-portal" />
       <extension name="coverage">
         <pattern>
@@ -95,13 +109,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.lin.blog.portal" />
       <option name="MAIN_CLASS_NAME" value="com.lin.blog.portal.PortalTest" />
-      <option name="METHOD_NAME" value="testParseJWT" />
+      <option name="METHOD_NAME" value="testCategoryServiceImpl" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PortalTest.testUserMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PortalTest.testGetAllCategoryOrderByLevel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="blog-portal" />
       <extension name="coverage">
         <pattern>
@@ -111,7 +125,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.lin.blog.portal" />
       <option name="MAIN_CLASS_NAME" value="com.lin.blog.portal.PortalTest" />
-      <option name="METHOD_NAME" value="testUserMapper" />
+      <option name="METHOD_NAME" value="testGetAllCategoryOrderByLevel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,10 +147,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.BlogPortalApplication" />
-        <item itemvalue="JUnit.PortalTest.testParseJWT" />
-        <item itemvalue="JUnit.PortalTest.testGenerateJWT" />
-        <item itemvalue="JUnit.PortalTest.testUserMapper" />
-        <item itemvalue="JUnit.PortalTest.encodePassword" />
+        <item itemvalue="JUnit.PortalTest.testGetAllCategoryOrderByLevel" />
+        <item itemvalue="JUnit.PortalTest.testCategorySelectDescendantById" />
+        <item itemvalue="JUnit.PortalTest.testCategoryServiceImpl" />
+        <item itemvalue="JUnit.PortalTest.testCategoryPathMapper" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +176,8 @@
       <workItem from="1681200685608" duration="339000" />
       <workItem from="1681316130013" duration="906000" />
       <workItem from="1681362218534" duration="8792000" />
-      <workItem from="1681448769717" duration="1772000" />
+      <workItem from="1681448769717" duration="20169000" />
+      <workItem from="1681529702359" duration="7940000" />
     </task>
     <servers />
   </component>
