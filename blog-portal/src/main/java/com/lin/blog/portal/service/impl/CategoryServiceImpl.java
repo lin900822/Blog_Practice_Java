@@ -2,6 +2,7 @@ package com.lin.blog.portal.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lin.blog.portal.exception.ServiceException;
+import com.lin.blog.portal.mapper.ArticleMapper;
 import com.lin.blog.portal.mapper.CategoryMapper;
 import com.lin.blog.portal.mapper.CategoryPathMapper;
 import com.lin.blog.portal.model.Category;
@@ -23,6 +24,9 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 
     @Resource
     private CategoryPathMapper categoryPathMapper;
+
+    @Resource
+    private ArticleMapper articleMapper;
 
     @Override
     @Transactional
@@ -80,9 +84,8 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 
         for(Category c : list)
         {
+            articleMapper.updateCategoryName(c.getName(), "");
             categoryMapper.deleteById(c.getId());
         }
     }
-
-
 }

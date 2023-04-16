@@ -6,8 +6,10 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lin.blog.portal.exception.ServiceException;
 import com.lin.blog.portal.mapper.ArticleMapper;
+import com.lin.blog.portal.mapper.CategoryMapper;
 import com.lin.blog.portal.mapper.UserMapper;
 import com.lin.blog.portal.model.Article;
+import com.lin.blog.portal.model.Category;
 import com.lin.blog.portal.service.IArticleService;
 import com.lin.blog.portal.vo.ArticleVO;
 import org.springframework.stereotype.Service;
@@ -25,6 +27,9 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
 
     @Resource
     private UserMapper userMapper;
+
+    @Resource
+    private CategoryMapper categoryMapper;
 
     @Override
     @Transactional
@@ -68,4 +73,18 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         List<Article> articles = articleMapper.selectList(query);
         return new PageInfo<>(articles);
     }
+
+    @Override
+    public PageInfo<Article> getArticlesByCategory(String categoryName, Integer pageNum, Integer pageSize)
+    {
+        Category category = categoryMapper.selectByName(categoryName);
+        if(category == null) return null;
+        List<Category> categories = categoryMapper.findSelfAndDescendantById(category.getId());
+
+        PageHelper.startPage(pageNum, pageSize);
+        List<Article> articles = articleMapper.selectByCategories(categories);
+        return new PageInfo<>(articles);
+    }
+
+
 }

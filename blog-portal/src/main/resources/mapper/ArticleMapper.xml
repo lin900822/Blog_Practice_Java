@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.blog.portal.mapper.ArticleMapper">
+    <select id="selectByCategories" parameterType="java.util.List" resultType="com.lin.blog.portal.model.Article">
+        select * from articles where category IN
+        <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+            #{item.name}
+        </foreach>
+        order by updated_at desc
+    </select>
+</mapper>

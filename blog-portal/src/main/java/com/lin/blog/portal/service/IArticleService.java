@@ -12,4 +12,6 @@ public interface IArticleService extends IService<Article>
     Integer saveArticle(ArticleVO articleVO, String username);
 
     PageInfo<Article> getAllArticles(Integer pageNum, Integer pageSize);
+
+    PageInfo<Article> getArticlesByCategory(String categoryName, Integer pageNum, Integer pageSize);
 }

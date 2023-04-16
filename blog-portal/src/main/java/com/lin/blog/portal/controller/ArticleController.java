@@ -61,6 +61,15 @@ public class ArticleController
         return ResponseEntity.ok(articles);
     }
 
+    @GetMapping("/category")
+    public ResponseEntity<PageInfo<Article>> getArticlesByCategory(String category, Integer pageNum)
+    {
+        log.debug("按照分類搜尋文章:分類名稱:{}, 第{}頁", category, pageNum);
+        PageInfo<Article> articles = articleService.getArticlesByCategory(category, pageNum, 8);
+
+        return ResponseEntity.ok(articles);
+    }
+
     @GetMapping("/delete/{id}")
     public ResponseEntity deleteById(@PathVariable Integer id)
     {
