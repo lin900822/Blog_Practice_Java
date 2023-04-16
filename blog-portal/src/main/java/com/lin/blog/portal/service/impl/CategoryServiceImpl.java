@@ -82,7 +82,8 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 
         categoryPathMapper.deleteCategoryPath(id);
 
-        for(Category c : list)
+        // 此處連接資料庫次數過多，待優化
+        for (Category c : list)
         {
             articleMapper.updateCategoryName(c.getName(), "");
             categoryMapper.deleteById(c.getId());

@@ -18,5 +18,5 @@ public interface CategoryPathMapper extends BaseMapper<CategoryPath>
 
     @Delete("DELETE FROM categorypaths \n" +
             "WHERE descendant IN(SELECT descendant FROM (SELECT * FROM categorypaths) AS tmp WHERE ancestor = #{id});")
-    void deleteCategoryPath(Integer id);
+    int deleteCategoryPath(Integer id);
 }

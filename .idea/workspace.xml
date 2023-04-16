@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8088a895-e0ef-4e22-9e4b-d3fca3edee61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/ResourceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Resource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/IResourceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/ResourceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/utils/ByteConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/test/java/com/lin/blog/portal/MyTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/ArticleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/IArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/IArticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/SystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ResourceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/CategoryPathMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/CategoryPathMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/CategoryServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +68,8 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BlogPortalApplication">
-    <configuration name="PortalTest.testCategoryPathMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lin.blog.portal.MyTest" />
       <module name="blog-portal" />
       <extension name="coverage">
         <pattern>
@@ -73,10 +77,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.lin.blog.portal" />
-      <option name="MAIN_CLASS_NAME" value="com.lin.blog.portal.PortalTest" />
-      <option name="METHOD_NAME" value="testCategoryPathMapper" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,10 +145,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.BlogPortalApplication" />
+        <item itemvalue="Application.MyTest" />
         <item itemvalue="JUnit.PortalTest.testGetAllCategoryOrderByLevel" />
         <item itemvalue="JUnit.PortalTest.testCategorySelectDescendantById" />
         <item itemvalue="JUnit.PortalTest.testCategoryServiceImpl" />
-        <item itemvalue="JUnit.PortalTest.testCategoryPathMapper" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +176,7 @@
       <workItem from="1681362218534" duration="8792000" />
       <workItem from="1681448769717" duration="20169000" />
       <workItem from="1681529702359" duration="10526000" />
-      <workItem from="1681615386303" duration="5727000" />
+      <workItem from="1681615386303" duration="14679000" />
     </task>
     <servers />
   </component>
