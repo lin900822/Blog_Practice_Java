@@ -75,7 +75,19 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     }
 
     @Override
-    public PageInfo<Article> getArticlesByCategory(String categoryName, Integer pageNum, Integer pageSize)
+    public PageInfo<Article> getAllPublicArticles(Integer pageNum, Integer pageSize)
+    {
+        QueryWrapper<Article> query = new QueryWrapper<>();
+        query.orderByDesc("updated_at");
+        query.eq("status", 1);
+
+        PageHelper.startPage(pageNum, pageSize);
+        List<Article> articles = articleMapper.selectList(query);
+        return new PageInfo<>(articles);
+    }
+
+    @Override
+    public PageInfo<Article> getPublicArticlesByCategory(String categoryName, Integer pageNum, Integer pageSize)
     {
         Category category = categoryMapper.selectByName(categoryName);
         if(category == null) return null;

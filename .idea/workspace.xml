@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8088a895-e0ef-4e22-9e4b-d3fca3edee61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/BasicController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/BasicMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Basic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/IBasicService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/BasicServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/IArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/IArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/JWTService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +174,7 @@
       <workItem from="1681448769717" duration="20169000" />
       <workItem from="1681529702359" duration="10526000" />
       <workItem from="1681615386303" duration="16716000" />
-      <workItem from="1681698459464" duration="5890000" />
+      <workItem from="1681698459464" duration="7456000" />
     </task>
     <servers />
   </component>

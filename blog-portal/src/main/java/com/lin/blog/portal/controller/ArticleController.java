@@ -12,9 +12,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @Slf4j
@@ -61,11 +58,19 @@ public class ArticleController
         return ResponseEntity.ok(articles);
     }
 
+    @GetMapping("/allPublic")
+    public ResponseEntity<PageInfo<Article>> getAllPublicArticles(Integer pageNum)
+    {
+        PageInfo<Article> articles = articleService.getAllPublicArticles(pageNum, 8);
+
+        return ResponseEntity.ok(articles);
+    }
+
     @GetMapping("/category")
     public ResponseEntity<PageInfo<Article>> getArticlesByCategory(String category, Integer pageNum)
     {
         log.debug("按照分類搜尋文章:分類名稱:{}, 第{}頁", category, pageNum);
-        PageInfo<Article> articles = articleService.getArticlesByCategory(category, pageNum, 8);
+        PageInfo<Article> articles = articleService.getPublicArticlesByCategory(category, pageNum, 8);
 
         return ResponseEntity.ok(articles);
     }
