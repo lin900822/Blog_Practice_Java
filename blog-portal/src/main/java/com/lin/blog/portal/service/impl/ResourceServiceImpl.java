@@ -50,6 +50,9 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceMapper, Resource> i
     @Override
     public PageInfo<Resource> getAllResources(Integer pageNum, Integer pageSize)
     {
+        if(pageSize == null || pageSize == 0) pageSize = 1;
+        if(pageNum == null || pageNum == 0) pageNum = 1;
+
         QueryWrapper<Resource> query = new QueryWrapper<>();
         query.orderByDesc("created_at");
 

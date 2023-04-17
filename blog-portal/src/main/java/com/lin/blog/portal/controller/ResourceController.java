@@ -43,9 +43,9 @@ public class ResourceController
     }
 
     @GetMapping("/allResources")
-    public ResponseEntity<PageInfo<com.lin.blog.portal.model.Resource>> getAllFiles(Integer pageNum)
+    public ResponseEntity<PageInfo<com.lin.blog.portal.model.Resource>> getAllFiles(Integer pageNum, Integer pageSize)
     {
-        PageInfo<com.lin.blog.portal.model.Resource> list = resourceService.getAllResources(pageNum, 20);
+        PageInfo<com.lin.blog.portal.model.Resource> list = resourceService.getAllResources(pageNum, pageSize);
 
         return ResponseEntity.ok(list);
     }
