@@ -8,7 +8,6 @@ import com.lin.blog.portal.mapper.CategoryPathMapper;
 import com.lin.blog.portal.model.Category;
 import com.lin.blog.portal.model.CategoryPath;
 import com.lin.blog.portal.service.ICategoryService;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
