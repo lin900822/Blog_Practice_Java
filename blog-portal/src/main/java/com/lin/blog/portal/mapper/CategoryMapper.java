@@ -19,17 +19,17 @@ public interface CategoryMapper extends BaseMapper<Category>
             "WHERE p.ancestor = #{id};")
     List<Category> findSelfAndDescendantById(Integer id);
 
-    @Select("WITH RECURSIVE cte AS (\n" +
-            "  SELECT id, NAME, level, CAST(NAME AS CHAR(200)) AS path\n" +
-            "  FROM categories\n" +
-            "  WHERE level = 0\n" +
-            "  UNION ALL\n" +
-            "  SELECT c.id, c.NAME, c.level, CONCAT(cte.path, ' > ', c.NAME)\n" +
-            "  FROM categories c\n" +
-            "  JOIN CategoryPaths cp ON c.id = cp.Descendant\n" +
-            "  JOIN cte ON cp.Ancestor = cte.id\n" +
-            "  WHERE c.level = cte.level + 1\n" +
+    @Select("with recursive cte as (\n" +
+            "  select id, name, level, cast(name as char(200)) as path\n" +
+            "  from categories\n" +
+            "  where level = 0\n" +
+            "  union all\n" +
+            "  select c.id, c.name, c.level, concat(cte.path, ' > ', c.name)\n" +
+            "  from categories c\n" +
+            "  join categorypaths cp on c.id = cp.descendant\n" +
+            "  join cte on cp.ancestor = cte.id\n" +
+            "  where c.level = cte.level + 1\n" +
             ")\n" +
-            "SELECT id,NAME,level FROM cte ORDER BY PATH;")
+            "select id,name,level from cte order by path;")
     List<Category> findAllCategoriesOrderByLevel();
 }
