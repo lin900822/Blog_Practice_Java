@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8088a895-e0ef-4e22-9e4b-d3fca3edee61" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/CommentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/ICommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/CommentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/CategoryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/test/java/com/lin/blog/portal/PortalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/test/java/com/lin/blog/portal/PortalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/security/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/security/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/JWTService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +181,8 @@
       <workItem from="1681883686830" duration="600000" />
       <workItem from="1681973300375" duration="3078000" />
       <workItem from="1682165885980" duration="2288000" />
-      <workItem from="1682181135471" duration="1387000" />
+      <workItem from="1682181135471" duration="1583000" />
+      <workItem from="1682226875696" duration="6323000" />
     </task>
     <servers />
   </component>

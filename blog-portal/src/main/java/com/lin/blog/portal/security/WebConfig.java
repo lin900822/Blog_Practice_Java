@@ -28,7 +28,8 @@ public class WebConfig implements WebMvcConfigurer
         registry.addInterceptor(authInterceptor)
                 .addPathPatterns(
                         "/auth/user",
-                        "/auth/isAdmin"
+                        "/auth/isAdmin",
+                        "/comment/add"
 //                        "/article/save"
                 );
     }
