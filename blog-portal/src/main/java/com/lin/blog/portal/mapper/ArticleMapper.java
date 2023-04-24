@@ -13,7 +13,7 @@ import java.util.List;
 public interface ArticleMapper extends BaseMapper<Article>
 {
     @Update("UPDATE articles SET category=#{newName} WHERE category=#{oldName};")
-    int updateCategoryName(@Param("oldName") String oldName, @Param("newName") String newName);
+    int updateArticlesCategoryName(@Param("oldName") String oldName, @Param("newName") String newName);
 
     List<Article> selectByCategories(List<Category> categories);
 }

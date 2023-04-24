@@ -14,4 +14,6 @@ public interface ICategoryService extends IService<Category>
     List<Category> getAllCategoriesTree();
 
     void deleteCategory(Integer id);
+
+    void updateCategory(Integer id, String name);
 }

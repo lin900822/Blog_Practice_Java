@@ -53,9 +53,9 @@ public class ResourceController
         return ResponseEntity.ok(list);
     }
 
-    @PostMapping("/delete/{id}")
+    @PostMapping("/delete")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public ResponseEntity deleteFile(@PathVariable Integer id)
+    public ResponseEntity deleteFile(Integer id)
     {
         resourceService.deleteResource(id);
 

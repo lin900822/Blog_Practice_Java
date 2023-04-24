@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 public class UserVO implements Serializable
 {
+    private Integer id;
     private String username;
     private String nickname;
     private String email;

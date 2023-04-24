@@ -56,6 +56,7 @@ public class AuthController
         User user = userService.getUserByUsername(userDetails.getUsername());
 
         UserVO userVO = new UserVO()
+                .setId(user.getId())
                 .setUsername(user.getUsername())
                 .setNickname(user.getNickname())
                 .setEmail(user.getEmail())

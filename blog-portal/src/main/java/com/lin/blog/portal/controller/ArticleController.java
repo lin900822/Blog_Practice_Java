@@ -76,9 +76,9 @@ public class ArticleController
         return ResponseEntity.ok(articles);
     }
 
-    @PostMapping("/delete/{id}")
+    @PostMapping("/delete")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public ResponseEntity deleteById(@PathVariable Integer id)
+    public ResponseEntity deleteById(Integer id)
     {
         boolean hasRemoved = articleService.removeById(id);
         if (!hasRemoved)

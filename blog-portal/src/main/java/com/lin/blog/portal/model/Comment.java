@@ -31,6 +31,9 @@ public class Comment
     @TableField("content")
     private String content;
 
+    @TableField("status")
+    private Integer status;
+
     @TableField("created_at")
     private LocalDateTime createdAt;
 }

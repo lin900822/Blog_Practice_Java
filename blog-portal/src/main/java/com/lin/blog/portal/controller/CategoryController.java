@@ -1,5 +1,6 @@
 package com.lin.blog.portal.controller;
 
+import com.lin.blog.portal.exception.ServiceException;
 import com.lin.blog.portal.model.Category;
 import com.lin.blog.portal.service.ICategoryService;
 import com.lin.blog.portal.service.impl.CategoryServiceImpl;
@@ -33,11 +34,25 @@ public class CategoryController
         return ResponseEntity.ok(categoryService.getAllCategoriesTree());
     }
 
-    @PostMapping("/delete/{id}")
+    @PostMapping("/delete")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public ResponseEntity deleteCategory(@PathVariable Integer id)
+    public ResponseEntity deleteCategory(Integer id)
     {
         categoryService.deleteCategory(id);
+        return ResponseEntity.ok(null);
+    }
+
+    @PostMapping("/update")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ResponseEntity updateCategory(Integer id, String name)
+    {
+        if (name.isEmpty())
+        {
+            throw new ServiceException("名稱不得為空!");
+        }
+
+        categoryService.updateCategory(id, name);
+
         return ResponseEntity.ok(null);
     }
 }

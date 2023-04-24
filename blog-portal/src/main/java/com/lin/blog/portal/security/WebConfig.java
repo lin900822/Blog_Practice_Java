@@ -30,14 +30,17 @@ public class WebConfig implements WebMvcConfigurer
                         "/auth/user",
                         "/auth/isAdmin",
                         "/comment/add",
+                        "/comment/update",
+                        "/comment/delete",
                         "/article/save",
-                        "/article/delete/*",
+                        "/article/delete",
                         "/basic/save",
                         "/category/add",
-                        "/category/delete/*",
+                        "/category/update",
+                        "/category/delete",
                         "/resource/upload",
                         "/resource/allResources",
-                        "/resource/delete/*"
+                        "/resource/delete"
                 );
     }
 }

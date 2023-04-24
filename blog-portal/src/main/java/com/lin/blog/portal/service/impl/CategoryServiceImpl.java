@@ -84,8 +84,20 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
         // 此處連接資料庫次數過多，待優化
         for (Category c : list)
         {
-            articleMapper.updateCategoryName(c.getName(), "");
+            articleMapper.updateArticlesCategoryName(c.getName(), "");
             categoryMapper.deleteById(c.getId());
         }
+    }
+
+    @Override
+    @Transactional
+    public void updateCategory(Integer id, String name)
+    {
+        Category category = categoryMapper.selectById(id);
+        String oldName = category.getName();
+        category.setName(name);
+        categoryMapper.updateById(category);
+
+        articleMapper.updateArticlesCategoryName(oldName, name);
     }
 }

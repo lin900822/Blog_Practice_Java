@@ -12,10 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
@@ -59,6 +56,7 @@ public class CommentController
                 .setUserId(user.getId())
                 .setNickname(user.getNickname())
                 .setContent(comment)
+                .setStatus(1)
                 .setCreatedAt(LocalDateTime.now());
 
         commentService.save(c);
@@ -72,5 +70,43 @@ public class CommentController
         List<Comment> comments = commentService.getCommentsByArticleId(articleId);
 
         return ResponseEntity.ok(comments);
+    }
+
+    @PostMapping("/update")
+    @PreAuthorize("hasRole('ROLE_VISITOR')")
+    public ResponseEntity updateComment(@AuthenticationPrincipal UserDetails userDetails, Integer id, String content)
+    {
+        Comment comment = commentService.getById(id);
+
+        User user = userService.getById(comment.getUserId());
+
+        if (!user.getUsername().equals(userDetails.getUsername()))
+        {
+            throw new ServiceException("您無法修改別人的評論!");
+        }
+
+        comment.setContent(content);
+        commentService.updateById(comment);
+
+        return ResponseEntity.ok(null);
+    }
+
+    @PostMapping("/delete")
+    @PreAuthorize("hasRole('ROLE_VISITOR')")
+    public ResponseEntity deleteComment(@AuthenticationPrincipal UserDetails userDetails, Integer id)
+    {
+        Comment comment = commentService.getById(id);
+
+        User user = userService.getById(comment.getUserId());
+
+        if (!user.getUsername().equals(userDetails.getUsername()))
+        {
+            throw new ServiceException("您無法刪除別人的評論!");
+        }
+
+        comment.setStatus(0);
+        commentService.updateById(comment);
+
+        return ResponseEntity.ok(null);
     }
 }
