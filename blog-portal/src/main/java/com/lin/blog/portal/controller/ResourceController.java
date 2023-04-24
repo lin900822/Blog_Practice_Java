@@ -7,6 +7,7 @@ import com.lin.blog.portal.utils.ByteConverter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,6 +28,7 @@ public class ResourceController
     private IResourceService resourceService;
 
     @PostMapping("/upload")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<String> upload(MultipartFile multipartFile) throws IOException
     {
         String resourceUrl = resourceService.saveFileToDisk(multipartFile);
@@ -42,7 +44,8 @@ public class ResourceController
         return ResponseEntity.ok(resourceUrl);
     }
 
-    @GetMapping("/allResources")
+    @PostMapping("/allResources")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<PageInfo<com.lin.blog.portal.model.Resource>> getAllFiles(Integer pageNum, Integer pageSize)
     {
         PageInfo<com.lin.blog.portal.model.Resource> list = resourceService.getAllResources(pageNum, pageSize);
@@ -50,7 +53,8 @@ public class ResourceController
         return ResponseEntity.ok(list);
     }
 
-    @GetMapping("/delete/{id}")
+    @PostMapping("/delete/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity deleteFile(@PathVariable Integer id)
     {
         resourceService.deleteResource(id);

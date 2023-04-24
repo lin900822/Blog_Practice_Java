@@ -29,8 +29,15 @@ public class WebConfig implements WebMvcConfigurer
                 .addPathPatterns(
                         "/auth/user",
                         "/auth/isAdmin",
-                        "/comment/add"
-//                        "/article/save"
+                        "/comment/add",
+                        "/article/save",
+                        "/article/delete/*",
+                        "/basic/save",
+                        "/category/add",
+                        "/category/delete/*",
+                        "/resource/upload",
+                        "/resource/allResources",
+                        "/resource/delete/*"
                 );
     }
 }

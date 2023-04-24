@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface CommentMapper extends BaseMapper<Comment>
 {
-    @Select("select * from comments where article_id=#{articleId}")
+    @Select("select * from comments where article_id=#{articleId} order by created_at")
     List<Comment> findCommentsByArticleId(Integer articleId);
 }

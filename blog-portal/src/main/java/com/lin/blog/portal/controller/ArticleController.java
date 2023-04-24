@@ -7,6 +7,9 @@ import com.lin.blog.portal.service.IArticleService;
 import com.lin.blog.portal.vo.ArticleVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -22,10 +25,8 @@ public class ArticleController
     private IArticleService articleService;
 
     @PostMapping("/save")
-    //@PreAuthorize("hasRole('ROLE_ADMIN')")
-    public ResponseEntity<Integer> saveArticle(@Validated ArticleVO articleVO,
-            /*@AuthenticationPrincipal UserDetails userDetails,*/
-                                               BindingResult result)
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ResponseEntity<Integer> saveArticle(@Validated ArticleVO articleVO, BindingResult result)
     {
         log.debug("儲存文章:{}", articleVO);
         if (result.hasErrors())
@@ -75,7 +76,8 @@ public class ArticleController
         return ResponseEntity.ok(articles);
     }
 
-    @GetMapping("/delete/{id}")
+    @PostMapping("/delete/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity deleteById(@PathVariable Integer id)
     {
         boolean hasRemoved = articleService.removeById(id);

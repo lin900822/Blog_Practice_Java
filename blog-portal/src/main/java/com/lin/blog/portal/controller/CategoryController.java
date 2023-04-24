@@ -5,6 +5,7 @@ import com.lin.blog.portal.service.ICategoryService;
 import com.lin.blog.portal.service.impl.CategoryServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -19,6 +20,7 @@ public class CategoryController
     private ICategoryService categoryService;
 
     @PostMapping("/add")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void addCategory(String name, Integer ancestorId)
     {
         log.debug("接收到新增分類資料:name={},ancestorId={}", name, ancestorId);
@@ -31,7 +33,8 @@ public class CategoryController
         return ResponseEntity.ok(categoryService.getAllCategoriesTree());
     }
 
-    @GetMapping("/delete/{id}")
+    @PostMapping("/delete/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity deleteCategory(@PathVariable Integer id)
     {
         categoryService.deleteCategory(id);
