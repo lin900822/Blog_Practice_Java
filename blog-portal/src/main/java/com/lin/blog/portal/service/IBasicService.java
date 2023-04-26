@@ -6,4 +6,6 @@ import com.lin.blog.portal.model.Basic;
 public interface IBasicService extends IService<Basic>
 {
     void saveBasic(Basic basic);
+
+    Basic getBasic();
 }

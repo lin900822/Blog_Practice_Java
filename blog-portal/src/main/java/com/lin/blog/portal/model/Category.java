@@ -8,11 +8,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 @Data
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = false)
 @TableName("categories")
-public class Category
+public class Category implements Serializable
 {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;

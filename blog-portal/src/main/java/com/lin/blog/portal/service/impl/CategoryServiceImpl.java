@@ -8,6 +8,7 @@ import com.lin.blog.portal.mapper.CategoryPathMapper;
 import com.lin.blog.portal.model.Category;
 import com.lin.blog.portal.model.CategoryPath;
 import com.lin.blog.portal.service.ICategoryService;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -51,6 +52,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
             list.add(new CategoryPath(category.getId(), category.getId()));
 
             categoryPathMapper.batchInsert(list);
+            resetCategoriesTreeRedis();
         }
         else
         {
@@ -58,19 +60,24 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
             categoryMapper.insert(category);
 
             categoryPathMapper.insert(new CategoryPath(category.getId(), category.getId()));
+            resetCategoriesTreeRedis();
         }
     }
 
-    @Override
-    public List<Category> getSelfAndDescendantCategories(Integer id)
-    {
-        return categoryMapper.findSelfAndDescendantById(id);
-    }
+    @Resource
+    private RedisTemplate<String, List<Category>> redisTemplate;
 
     @Override
     public List<Category> getAllCategoriesTree()
     {
-        return categoryMapper.findAllCategoriesOrderByLevel();
+        List<Category> categories = redisTemplate.opsForValue().get("categories");
+
+        if (categories == null)
+        {
+            categories = categoryMapper.findAllCategoriesOrderByLevel();
+            redisTemplate.opsForValue().set("categories", categories);
+        }
+        return categories;
     }
 
     @Override
@@ -81,12 +88,14 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
 
         categoryPathMapper.deleteCategoryPath(id);
 
-        // 此處連接資料庫次數過多，待優化
+        // 此處連接資料庫次數多，可優化
         for (Category c : list)
         {
             articleMapper.updateArticlesCategoryName(c.getName(), "");
             categoryMapper.deleteById(c.getId());
         }
+
+        resetCategoriesTreeRedis();
     }
 
     @Override
@@ -99,5 +108,15 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
         categoryMapper.updateById(category);
 
         articleMapper.updateArticlesCategoryName(oldName, name);
+
+        resetCategoriesTreeRedis();
+    }
+
+    private void resetCategoriesTreeRedis()
+    {
+        if (redisTemplate.hasKey("categories"))
+        {
+            redisTemplate.delete("categories");
+        }
     }
 }

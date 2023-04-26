@@ -8,13 +8,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = false)
 @TableName("comments")
-public class Comment
+public class Comment implements Serializable
 {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;

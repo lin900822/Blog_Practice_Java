@@ -40,13 +40,9 @@ public class ExceptionControllerAdvice
     }
 
     @ExceptionHandler
-    public ResponseEntity<Object> handleExpiredJwtException(ExpiredJwtException e) {
-        log.error("JWT授權異常", e);
-        Map<String, Object> errorDetails = new HashMap<>();
-        errorDetails.put("timestamp", LocalDateTime.now());
-        errorDetails.put("message", e.getMessage());
-        errorDetails.put("status", HttpStatus.UNAUTHORIZED.value());
-        return new ResponseEntity<>(errorDetails, HttpStatus.UNAUTHORIZED);
+    public ResponseEntity<String> handleExpiredJwtException(ExpiredJwtException e) {
+        log.debug("JWT過期", e);
+        return ResponseEntity.ok("JWT Expired");
     }
 
     @ExceptionHandler(Exception.class)

@@ -6,18 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="8088a895-e0ef-4e22-9e4b-d3fca3edee61" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ResourceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/ArticleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/mapper/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/BasicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/BasicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ExceptionControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/controller/ExceptionControllerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Basic.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Basic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/CategoryPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/CategoryPath.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/security/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/security/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/model/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/IBasicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/IBasicService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/ICategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/ICategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/BasicServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/BasicServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/vo/UserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/vo/UserVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/java/com/lin/blog/portal/service/impl/JWTService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-portal/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/blog-portal/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +192,8 @@
       <workItem from="1682181135471" duration="1583000" />
       <workItem from="1682226875696" duration="6624000" />
       <workItem from="1682313341805" duration="5291000" />
-      <workItem from="1682330773894" duration="11992000" />
+      <workItem from="1682330773894" duration="13620000" />
+      <workItem from="1682479091691" duration="5792000" />
     </task>
     <servers />
   </component>

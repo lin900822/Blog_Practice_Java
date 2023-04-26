@@ -9,8 +9,6 @@ public interface ICategoryService extends IService<Category>
 {
     void addCategory(String name, Integer ancestorId);
 
-    List<Category> getSelfAndDescendantCategories(Integer id);
-
     List<Category> getAllCategoriesTree();
 
     void deleteCategory(Integer id);

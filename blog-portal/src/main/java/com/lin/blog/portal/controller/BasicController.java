@@ -34,6 +34,6 @@ public class BasicController
     @GetMapping("")
     public ResponseEntity<Basic> getBasic()
     {
-        return ResponseEntity.ok(basicService.getById(1));
+        return ResponseEntity.ok(basicService.getBasic());
     }
 }

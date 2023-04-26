@@ -38,7 +38,7 @@ public class JWTService
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.MINUTE, 30);
+        calendar.add(Calendar.MINUTE, 15);
 
         Set<GrantedAuthority> authorities = (Set<GrantedAuthority>) userDetails.getAuthorities();
         String[] auth = new String[authorities.size()];
